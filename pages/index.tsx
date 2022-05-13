@@ -1,12 +1,11 @@
 import Head from 'next/head';
-import styles from 'styles/home.module.scss';
 const Home = () => {
   return (
     <>
       <Head>
-        <title>ignews</title>
+        <title>Início | ig.news</title>
       </Head>
-      <h1 className={styles.home}>hello</h1>
+      <h1>hello</h1>
     </>
   );
 };
