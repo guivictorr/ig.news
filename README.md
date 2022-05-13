@@ -19,12 +19,13 @@ Backend
 
 ```
 ## 1. Clone repo
-git clone https://github.com/guivictorr/nomedorepo.git
+git clone https://github.com/guivictorr/ig.news.git
 
 ## 2. Change to project folder
-cd nomedorepo
+cd ig.news
 
 ## 3. Install dependencies
+yarn
 
 ## 4. Run the app
 yarn start
@@ -38,8 +39,4 @@ yarn start
 - Push to your branch: `git push origin my-feature`.
 
 Once your pull request has been merged, you can delete your branch.
-
-## 📝 License
-
-This project is under the MIT license. See the [LICENSE](https://github.com/guivictorr/CURRENT_REPOSITORY/blob/master/LICENSE) file for more details.
  
