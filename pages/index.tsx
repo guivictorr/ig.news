@@ -1,13 +1,7 @@
-import Head from 'next/head';
-const Home = () => {
-  return (
-    <>
-      <Head>
-        <title>Início | ig.news</title>
-      </Head>
-      <h1>hello</h1>
-    </>
-  );
-};
+import HomeTemplate from 'templates/Home';
+
+function Home() {
+  return <HomeTemplate />;
+}
 
 export default Home;

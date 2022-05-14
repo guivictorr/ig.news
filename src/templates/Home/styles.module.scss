@@ -1,0 +1,42 @@
+.contentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  max-width: 1120px;
+  margin: 0 auto;
+  height: calc(100vh - 5rem);
+}
+
+.hero {
+  p:first-child {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    span:last-child {
+      margin-left: 1rem;
+    }
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+    font-weight: 900;
+    margin-top: 3rem;
+
+    span {
+      color: var(--cyan-500);
+    }
+  }
+
+  p:last-child {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    margin-top: 1.5rem;
+
+    span {
+      color: var(--cyan-500);
+    }
+  }
+}
