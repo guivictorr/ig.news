@@ -6,6 +6,7 @@
 This project was developed with the following technologies:
 
 Frontend
+
 - [ReactJS](https://pt-br.reactjs.org)
 - [Next.js](https://nextjs.org)
 - [Typescript](typescriptlang.org/)
@@ -13,6 +14,7 @@ Frontend
 - [Sass](https://sass-lang.com/)
 
 Backend
+
 - [FaunaDB](https://fauna.com/)
 
 ## 📱💻 Instructions
@@ -23,6 +25,8 @@ git clone https://github.com/guivictorr/ig.news.git
 
 ## 2. Change to project folder
 cd ig.news
+
+## 3. Configure .env.local variables
 
 ## 3. Install dependencies
 yarn
@@ -39,4 +43,3 @@ yarn start
 - Push to your branch: `git push origin my-feature`.
 
 Once your pull request has been merged, you can delete your branch.
- 
