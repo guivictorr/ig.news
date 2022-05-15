@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetStaticProps } from 'next';
 import { stripe } from 'services/stripe';
 import HomeTemplate from 'templates/Home';
 
@@ -13,7 +13,7 @@ function Home(props: HomeProps) {
   return <HomeTemplate {...props} />;
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const price = await stripe.prices.retrieve('price_1KzYeREcbM5W9LXWqUGq86tP');
 
   const priceData = {
