@@ -1,10 +1,11 @@
 import { SubscribeButton } from 'components/SubscribeButton';
 import Head from 'next/head';
 import Image from 'next/image';
+import { HomeProps } from '../../../pages';
 
 import styles from './styles.module.scss';
 
-function HomeTemplate() {
+function HomeTemplate({ priceData }: HomeProps) {
   return (
     <>
       <Head>
@@ -13,7 +14,7 @@ function HomeTemplate() {
 
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
-          <p>
+          <p className={styles.greetings}>
             <Image
               src="/images/clap.png"
               width={26}
@@ -25,9 +26,9 @@ function HomeTemplate() {
           <h1>
             News about <br /> the <span>React</span> world
           </h1>
-          <p>
+          <p className={styles.pricing}>
             Get acess to all the publications <br />
-            <span>for $9.90 month</span>
+            <span>for {priceData.price} month</span>
           </p>
           <SubscribeButton />
         </section>

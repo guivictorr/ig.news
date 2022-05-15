@@ -9,7 +9,7 @@
 }
 
 .hero {
-  p:first-child {
+  .greetings {
     display: flex;
     align-items: center;
     font-weight: 700;
@@ -30,7 +30,7 @@
     }
   }
 
-  p:last-child {
+  .pricing {
     font-size: 1.5rem;
     line-height: 2.25rem;
     margin-top: 1.5rem;
