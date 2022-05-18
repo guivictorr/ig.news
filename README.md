@@ -16,6 +16,7 @@ Frontend
 Backend
 
 - [FaunaDB](https://fauna.com/)
+- [Stripe](https://stripe.com/br)
 
 ## 📱💻 Instructions
 
