@@ -14,7 +14,11 @@ async function buffer(readable: Readable) {
   return Buffer.concat(chunks);
 }
 
-const relevantTypes = new Set(['checkout.session.completed']);
+const relevantTypes = new Set([
+  'checkout.session.completed',
+  'customer.subscription.updated',
+  'customer.subscription.deleted',
+]);
 
 export const config = {
   api: {
@@ -50,6 +54,16 @@ const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     switch (type) {
+      case 'customer.subscription.updated':
+      case 'customer.subscription.deleted':
+        const subscription = event.data.object as Stripe.Subscription;
+
+        await saveSubscription(
+          subscription.id,
+          subscription.customer.toString(),
+          false,
+        );
+        break;
       case 'checkout.session.completed':
         const checkoutSession = event.data.object as Stripe.Checkout.Session;
 
@@ -60,6 +74,7 @@ const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
         await saveSubscription(
           checkoutSession.subscription.toString(),
           checkoutSession.customer.toString(),
+          true,
         );
         break;
       default:
