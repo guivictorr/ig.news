@@ -29,10 +29,19 @@ cd ig.news
 
 ## 3. Configure .env.local variables
 
-## 3. Install dependencies
+## 4. Create FaunaDB collections and indexes
+Collections
+users
+subscriptions
+
+Indexes
+user_by_email - data.email
+user_by_stripe_customer_id - data.stripe_customer_id
+
+## 5. Install dependencies
 yarn
 
-## 4. Run the app
+## 6. Run the app
 yarn start
 ```
 
