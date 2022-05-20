@@ -1,7 +1,6 @@
 import { ActiveLink } from 'components/ActiveLink';
 import { SignInButton } from 'components/SIgnInButton';
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from './styles.module.scss';
 
 export function Header() {
