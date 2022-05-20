@@ -13,3 +13,17 @@ export const GET_PUBLICATIONS = gql`
     }
   }
 `;
+
+export const GET_PUBLICATION_BY_ID = gql`
+  query QueryPublicationById($slug: String) {
+    publication(where: { slug: $slug }) {
+      createdAt
+      description
+      slug
+      title
+      content {
+        html
+      }
+    }
+  }
+`;
