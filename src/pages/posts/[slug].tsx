@@ -1,6 +1,7 @@
 import client from 'graphql/client';
 import { GET_PUBLICATION_BY_ID } from 'graphql/queries/publications';
 import { GetServerSideProps } from 'next';
+import { getSession } from 'next-auth/react';
 import { PostTemplate } from 'templates/Post';
 
 export type PostProps = {
@@ -19,7 +20,18 @@ export default function Post(props: PostProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const session = await getSession({ req: ctx.req });
   const { slug } = ctx.query;
+  console.log(session);
+  if (session && !session.activeSubscription) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
   const response = await client.request(GET_PUBLICATION_BY_ID, {
     slug,
   });
