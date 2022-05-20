@@ -1,7 +1,7 @@
 import { SubscribeButton } from 'components/SubscribeButton';
 import Head from 'next/head';
 import Image from 'next/image';
-import { HomeProps } from '../../../pages';
+import { HomeProps } from 'pages';
 
 import styles from './styles.module.scss';
 

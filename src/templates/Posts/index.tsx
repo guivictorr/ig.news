@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { PostsProps } from '../../../pages/posts';
+import { PostsProps } from 'pages/posts';
 import styles from './styles.module.scss';
 
 export function PostsTemplate({ publications }: PostsProps) {
