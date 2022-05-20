@@ -1,7 +1,8 @@
 import Head from 'next/head';
+import { PostsProps } from '../../../pages/posts';
 import styles from './styles.module.scss';
 
-export function PostsTemplate() {
+export function PostsTemplate({ publications }: PostsProps) {
   return (
     <>
       <Head>
@@ -9,22 +10,19 @@ export function PostsTemplate() {
       </Head>
       <main className={styles.container}>
         <div className={styles.posts}>
-          <a href="">
-            <time>25 de julho de 2022</time>
-            <strong>Título muito maneiro</strong>
-            <p>
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
-          <a href="">
-            <time>25 de julho de 2022</time>
-            <strong>Título muito maneiro</strong>
-            <p>
-              In this guide, you will learn how to create a Monorepo to manage
-              multiple packages with a shared build, test, and release process.
-            </p>
-          </a>
+          {publications.map((publication) => (
+            <a href="" key={publication.slug}>
+              <time>
+                {new Intl.DateTimeFormat('en-US', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                }).format(new Date(publication.createdAt))}
+              </time>
+              <strong>{publication.title}</strong>
+              <p>{publication.description}</p>
+            </a>
+          ))}
         </div>
       </main>
     </>
