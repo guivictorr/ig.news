@@ -22,11 +22,10 @@ export default function Post(props: PostProps) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getSession({ req: ctx.req });
   const { slug } = ctx.query;
-  console.log(session);
-  if (session && !session.activeSubscription) {
+  if ((session && !session.activeSubscription) || !session) {
     return {
       redirect: {
-        destination: '/',
+        destination: `/posts/preview/${slug}`,
         permanent: false,
       },
     };
