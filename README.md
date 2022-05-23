@@ -27,7 +27,7 @@ git clone https://github.com/guivictorr/ig.news.git
 ## 2. Change to project folder
 cd ig.news
 
-## 3. Configure .env.local variables
+## 3. Configure .env.local variables based on .env.example
 
 ## 4. Create FaunaDB collections and indexes (see bellow)
 
@@ -38,7 +38,7 @@ stripe listen --forward-to http://localhost:3000/api/webhooks
 yarn
 
 ## 7. Run the app
-yarn start
+yarn dev
 ```
 
 ### Faunadb
