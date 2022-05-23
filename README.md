@@ -45,16 +45,16 @@ yarn start
 
 To work with this project you need to configure faunadb with these collections and indexes. 
 
-*Collections*
-users
-subscriptions
+**Collections**
+- users
+- subscriptions
 
-*Indexes* (name / term)
-user_by_email - data.email
-user_by_stripe_customer_id - data.stripe_customer_id
-subscription_by_user_ref - data.userId
-subscription_by_status - data.status
-subscription_by_id - data.id
+**Indexes** (name / term)
+- user_by_email - data.email
+- user_by_stripe_customer_id - data.stripe_customer_id
+- subscription_by_user_ref - data.userId
+- subscription_by_status - data.status
+- subscription_by_id - data.id
 
 
 ## 🤔 How to contribute
