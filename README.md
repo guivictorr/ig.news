@@ -29,21 +29,33 @@ cd ig.news
 
 ## 3. Configure .env.local variables
 
-## 4. Create FaunaDB collections and indexes
-Collections
+## 4. Create FaunaDB collections and indexes (see bellow)
+
+## 5. Use stripe cli to listen webhooks on localhost
+stripe listen --forward-to http://localhost:3000/api/webhooks
+
+## 6. Install dependencies
+yarn
+
+## 7. Run the app
+yarn start
+```
+
+### Faunadb
+
+To work with this project you need to configure faunadb with these collections and indexes. 
+
+*Collections*
 users
 subscriptions
 
-Indexes
+*Indexes* (name / term)
 user_by_email - data.email
 user_by_stripe_customer_id - data.stripe_customer_id
+subscription_by_user_ref - data.userId
+subscription_by_status - data.status
+subscription_by_id - data.id
 
-## 5. Install dependencies
-yarn
-
-## 6. Run the app
-yarn start
-```
 
 ## 🤔 How to contribute
 
